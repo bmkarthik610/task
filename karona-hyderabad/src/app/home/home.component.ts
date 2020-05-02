@@ -34,17 +34,7 @@ export class HomeComponent implements OnInit {
 
  
 
-  public dashboardPieChart: GoogleChartInterface = {
-    chartType: 'PieChart',
-    options: {
-      width: 250,
-      height: 250,
-      legend: 'none',
-      chartArea: { left: 15, top: 15, right: 0, bottom: 0 },
-      pieSliceText: 'label'
-    },
-    view: { columns: [0, 3] }
-  };
+
 
 
 
@@ -53,7 +43,7 @@ export class HomeComponent implements OnInit {
     chartType: 'ColumnChart',
     dataTable: this.columnChartData,
     options: {
-      title: 'Dates',
+      title: 'Hyderabad Karona Cases Datewise',
       animation: {
         duration: 1000,
         easing: 'out',
@@ -79,7 +69,6 @@ export class HomeComponent implements OnInit {
   {
 
   this.homeService.getChartData().subscribe(data => {
-        console.log( data,"eqetrw")
        
         this.columnChart.dataTable = data;
         this.columnChart.component.draw();
